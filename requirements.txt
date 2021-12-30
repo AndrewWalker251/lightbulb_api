@@ -66,7 +66,6 @@ pickleshare==0.7.5
 Pillow==8.4.0
 plotly==5.4.0
 plotly-express==0.4.1
-predicthq==1.9.0
 prometheus-client==0.8.0
 prompt-toolkit==3.0.8
 ptyprocess==0.6.0
