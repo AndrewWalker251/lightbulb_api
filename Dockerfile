@@ -1,4 +1,4 @@
-FROM python:3.6-slim
+FROM python:3.8-slim
 COPY main.py /deploy/
 COPY config.yaml /deploy/
 WORKDIR /deploy/
