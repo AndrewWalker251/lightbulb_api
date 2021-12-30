@@ -1,0 +1,2 @@
+model_path: './image_classifier/weights/model_weights_4.pth'
+image_to_test_path: './image_classifier/test_bulb.jpg'
