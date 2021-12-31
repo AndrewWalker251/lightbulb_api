@@ -13,11 +13,13 @@ with open(predictor_config_path, "r") as f:
     config = yaml.load(f, yaml.SafeLoader)
 
 # download the weights if the weights aren't already there.
-local_file = 'image_classifier/weights/model_weights_4.pth'
+local_file = './image_classifier/weights/model_weights_4.pth'
 
 if os.path.exists(local_file):
     print('Weights already exist')
 else:
+    # Create weights folder
+    os.mkdir(path)
     print('Downloading weights')
     # Define the remote file to retrieve
     remote_url = "https://github.com/AndrewWalker251/lightbulb_app/releases/download/v0.0.1/model_weights_4.pth"
