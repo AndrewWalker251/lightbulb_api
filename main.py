@@ -13,7 +13,7 @@ with open(predictor_config_path, "r") as f:
     config = yaml.load(f, yaml.SafeLoader)
 
 # download the weights if the weights aren't already there.
-local_file = './image_classifier/weights/model_weights_4.pth'
+local_file = 'image_classifier/weights/model_weights_4.pth'
 
 if os.path.exists(local_file):
     print('Weights already exist')
@@ -25,7 +25,7 @@ else:
     # Make http request for remote file data
     wget.download(remote_url, local_file)
 
-while 'model_weights_4.pth' not in os.listdir('./image_classifier/weights/'):
+while 'model_weights_4.pth' not in os.listdir('image_classifier/weights/'):
     print(os.listdir(''))
     print('waiting')
     time.sleep(20)
