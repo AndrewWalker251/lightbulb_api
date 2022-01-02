@@ -22,8 +22,13 @@ else:
     print('Downloading weights')
     # Define the remote file to retrieve
     remote_url = "https://github.com/AndrewWalker251/lightbulb_app/releases/download/v0.0.1/model_weights_4.pth"
+    # Test finding the location that's got
     # Make http request for remote file data
-    wget.download(remote_url, local_file)
+    import urllib.request
+    urllib.request.urlretrieve(remote_url, local_file)
+
+
+    #wget.download(remote_url, local_file)
 
 while 'model_weights_4.pth' not in os.listdir('lightbulb_app/image_classifier/weights/'):
     print(os.listdir(''))
