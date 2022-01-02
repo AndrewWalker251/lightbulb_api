@@ -1,6 +1,7 @@
 FROM python:3.8-slim
 COPY main.py /deploy/
 COPY config.yaml /deploy/
+COPY image_classifier/weights/model_weights_4.pth /deploy/lightbulb_app/image_classifier/weights/model_weights_4.pth
 WORKDIR /deploy/
 RUN apt update
 RUN apt install -y git
