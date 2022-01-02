@@ -15,6 +15,7 @@ with open(predictor_config_path, "r") as f:
 # download the weights if the weights aren't already there.
 local_file = 'lightbulb_app/image_classifier/weights/model_weights_4.pth'
 print(os.getcwd())
+print([x[0] for x in os.walk(os.getcwd())])
 if os.path.exists(local_file):
     print('Weights already exist')
 else:
