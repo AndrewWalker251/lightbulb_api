@@ -1,3 +1,3 @@
 model_path: 'image_classifier/weights/model_weights_4.pth'
 image_to_test_path: './image_classifier/test_bulb.jpg'
-model_url: 'https://github.com/AndrewWalker251/lightbulb_app/releases/v0.0.1/model_weights_4.pth'
+model_url: 'https://github.com/AndrewWalker251/lightbulb_api/releases/v0.0.1/model_weights_4.pth'
