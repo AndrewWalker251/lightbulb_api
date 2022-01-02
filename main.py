@@ -13,7 +13,7 @@ with open(predictor_config_path, "r") as f:
     config = yaml.load(f, yaml.SafeLoader)
 
 # download the weights if the weights aren't already there.
-local_file = 'lightbulb_app/image_classifier/weights/model_weights_4.pth'
+local_file = 'image_classifier/weights/model_weights_4.pth'
 print(os.getcwd())
 print([x[0] for x in os.walk(os.getcwd())])
 if os.path.exists(local_file):
@@ -32,7 +32,7 @@ else:
 
     #wget.download(remote_url, local_file)
 
-while 'model_weights_4.pth' not in os.listdir('lightbulb_app/image_classifier/weights/'):
+while 'model_weights_4.pth' not in os.listdir('image_classifier/weights/'):
     print(os.listdir(''))
     print('waiting')
     time.sleep(20)
@@ -46,7 +46,7 @@ predictor = ImagePredictor.init_model(predictor_config_path)
 
 @app.post("/predictbulb/")
 def create_upload_file(file: UploadFile = File(...)):
-    image = predictor.load_image_from_file(config['image_to_test_path'])
+    image = predictor.load_image_from_file(file.file)
     output = predictor.predict_image(image)
     return output
 

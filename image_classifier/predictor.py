@@ -24,7 +24,9 @@ class ImagePredictor:
         return predictor
 
     def load_image_from_file(self, file_object):
-        image = cv2.imread(file_object, cv2.IMREAD_COLOR)
+        arr = np.fromstring(file_object.read(), np.uint8)
+        image = cv2.imdecode(arr, cv2.IMREAD_COLOR)
+
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB).astype(np.float32)
         image /= 255.0
         # Albumentations library for transfors.
