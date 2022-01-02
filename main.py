@@ -14,7 +14,7 @@ with open(predictor_config_path, "r") as f:
 
 # download the weights if the weights aren't already there.
 local_file = 'lightbulb_app/image_classifier/weights/model_weights_4.pth'
-
+print(os.getcwd())
 if os.path.exists(local_file):
     print('Weights already exist')
 else:
@@ -24,6 +24,7 @@ else:
     remote_url = "https://github.com/AndrewWalker251/lightbulb_app/releases/download/v0.0.1/model_weights_4.pth"
     # Test finding the location that's got
     # Make http request for remote file data
+
     import urllib.request
     urllib.request.urlretrieve(remote_url, local_file)
 
